@@ -50,7 +50,11 @@ public class Directory {
 	 */	
 	public static String getCurrentDirectory(){
 		try{
-			return URLDecoder.decode((new File(Directory.class.getProtectionDomain().getCodeSource().getLocation().getPath()) + File.separator), "UTF-8");
+//			return URLDecoder.decode((new File(Directory.class.getProtectionDomain().getCodeSource().getLocation().getPath()) + File.separator), "UTF-8");
+			return URLDecoder.decode((new File(Directory.class
+					.getProtectionDomain().getCodeSource().getLocation()
+					.getPath()).getParent()), "UTF-8")
+					+ File.separator;
 		}catch(UnsupportedEncodingException ext)
 		{
 			return null;
