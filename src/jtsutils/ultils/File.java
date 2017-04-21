@@ -130,4 +130,18 @@ public class File {
 			}
 	}
 	
+	/**
+	 * Xoa mot file voi duong dan truyen vao
+	 * @param fileName
+	 * @return
+	 */
+	public static boolean deleteFile(String fileName){
+		java.io.File file = new java.io.File(fileName);
+		if(file.delete()){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 }
